@@ -1,5 +1,14 @@
-# run like so:
-# python3 average_gtifs.py average.tif --infiles *.tif 
+# based on https://stackoverflow.com/questions/57819013/how-to-calculate-a-raster-mean-average-from-individual-maps-using-gdal-in-python
+
+# Run like so (Heuchera project):
+
+#mkdir averages
+#for f in `ls *.tif | sed 's/_.*//g' | sort | uniq`; do
+#python3 average_gtifs.py ./averages/${f}.average.tif --infiles ${f}_boot*.tif 
+#done
+
+
+
 
 from osgeo import gdal
 import numpy as np
